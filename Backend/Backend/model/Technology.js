@@ -1,0 +1,87 @@
+import mongoose from "mongoose";
+
+const technologySchema = new mongoose.Schema(
+  {
+    domain: {
+      type: String,
+      enum: [
+        "Web Development",
+        "Mobile Development",
+        "Machine Learning",
+        "Artificial Intelligence",
+        "Cloud Computing",
+        "DevOps",
+        "Blockchain",
+        "IoT",
+        "Cybersecurity",
+        "Data Science",
+        "AR/VR",
+        "Game Development",
+        "Embedded Systems",
+        "Robotics",
+        "Other",
+      ],
+    },
+    technologies: [
+      {
+        name: {
+          type: String,
+          enum: [
+            "React",
+            "Angular",
+            "Vue",
+            "Node.js",
+            "Express",
+            "Django",
+            "Spring Boot",
+            "React Native",
+            "Flutter",
+            "Android",
+            "iOS",
+            "Kotlin",
+            "Swift",
+            "TensorFlow",
+            "PyTorch",
+            "Scikit-learn",
+            "OpenCV",
+            "NLP",
+            "AWS",
+            "Azure",
+            "GCP",
+            "Docker",
+            "Kubernetes",
+            "Jenkins",
+            "MongoDB",
+            "MySQL",
+            "PostgreSQL",
+            "Redis",
+            "Firebase",
+            "Python",
+            "Java",
+            "C++",
+            "Go",
+            "Rust",
+            "Solidity",
+            "Other",
+          ],
+        },
+        category: {
+          type: String,
+          enum: [
+            "Frontend",
+            "Backend",
+            "Database",
+            "DevOps",
+            "Mobile",
+            "AI/ML",
+            "Other",
+          ],
+        },
+        customInput: { type: String, default: null },
+      },
+    ],
+  },
+  { timestamps: true }
+);
+
+export default mongoose.model("Technology", technologySchema);
